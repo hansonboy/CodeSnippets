@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>CodeJSONSerializaiton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1001",@"id",@"wangjiawnei",@"name",nil];
+if([NSJSONSerialization isValidJSONObject:&lt;#JSONObject#&gt;]){
+        NSError *error;
+    NSData * resultData = [NSJSONSerialization dataWithJSONObject:&lt;#JSONObject#&gt; options:NSJSONWritingPrettyPrinted error:&amp;error];
+        NSLog(@"Json data:%@",[[NSString alloc]initWithData:resultData encoding:NSUTF8StringEncoding]);
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>10392F40-E274-4522-8C80-D62F5042B20A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Code.JSONSerialization</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

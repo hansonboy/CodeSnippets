@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>CodeJsonObject</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//将JSonData 转化为NSArray 或者 NSDictionary
+-(NSData*)jsonData:(NSString*)jsonString{
+    return [jsonString dataUsingEncoding:NSASCIIStringEncoding];
+}
+-(id)JSONObject:(NSData*)jsonData{
+    NSError*error = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&amp;error];
+    if(jsonObject != nil&amp;&amp; error ==nil) {
+        return jsonObject;
+    }else{
+        //解析错误
+        return nil;
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5BA76D66-06EF-4B1D-96F0-151761A5C262</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Code.jsonObject</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>CodeScreenBounds</string>
+	<string>Code.NextYForCode</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define ScreenBounds [UIScreen mainScreen].bounds</string>
+	<string>#define NextYFor(&lt;#a#&gt;)   (a.frame.origin.y+a.frame.size.height+10)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4322A5C3-60DB-4FA6-B329-2FEECDD0DCF8</string>
+	<string>02CC91A0-959D-46C1-98A2-B6725A17217C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Code.ScreenBoundsCode</string>
+	<string>Code.NextYFor</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

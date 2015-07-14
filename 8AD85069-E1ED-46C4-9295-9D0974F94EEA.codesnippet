@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>CodeJsonData</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//将NSDictionary 和 NSArray 转化为 JSON data
+-(NSData*)JSONData:(id)object{
+    NSError * error;
+    if ([NSJSONSerialization isValidJSONObject:object]) {
+        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingPrettyPrinted error:&amp;error];
+        if([jsonData length]&gt;0 &amp;&amp; error == nil){
+            return jsonData;
+        }else{
+            return nil;
+        }
+    }else return nil;
+}
+-(NSString*)jsonString:(NSData*)jsonData{
+    return [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8AD85069-E1ED-46C4-9295-9D0974F94EEA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Code.jsonData</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

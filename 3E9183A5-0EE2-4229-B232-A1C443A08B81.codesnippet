@@ -3,22 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>CodeScreenBounds</string>
+	<string>CodeJSONDeSerialization</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define ScreenBounds [UIScreen mainScreen].bounds</string>
+	<string>NSError * __autoreleasing error;
+NSDictionary * &lt;#JsonResultDic#&gt; = [[NSJSONSerialization JSONObjectWithData:&lt;#NSDataName#&gt; options:kNilOptions error:&amp;error] objectForKey:&lt;#ObjectKey#&gt;];
+    if (resultJson == nil) {
+        NSLog(@"JSON 解析失败");
+    }
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>4322A5C3-60DB-4FA6-B329-2FEECDD0DCF8</string>
+	<string>3E9183A5-0EE2-4229-B232-A1C443A08B81</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Code.ScreenBoundsCode</string>
+	<string>Code.JSONDeSerializatiion</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
