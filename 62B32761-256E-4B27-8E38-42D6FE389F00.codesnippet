@@ -13,7 +13,7 @@
     static &lt;#Name#&gt; * shared&lt;#Name#&gt;;
     static dispatch_once_t predicate;
     dispatch_once(&amp;predicate,^{
-        shared&lt;#Name#&gt; = [[self alloc]init];
+        shared&lt;#Name#&gt; = [[super alloc]init];
     });
     return shared&lt;#Name#&gt;;
 }
