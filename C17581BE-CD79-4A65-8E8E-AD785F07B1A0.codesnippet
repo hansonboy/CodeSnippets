@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>CodeCloseMangedDocument</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//    closing the document
+    [&lt;#UIMangedDocument#&gt; closeWithCompletionHandler:^(BOOL success) {
+        if(!success) NSLog(@"failed to close  doucment %@",&lt;#UIMangedDocument#&gt;.localizedName);
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C17581BE-CD79-4A65-8E8E-AD785F07B1A0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Code.closeManagedDocument</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
