@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>CodeManagedDocumentCoreData</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if(&lt;#UIManagedDocument#&gt;.documentState == UIDocumentStateNormal){
+    //        starting using document
+    NSManagedObjectContext * context = &lt;#UIManagedDocument#&gt;.managedObjectContext;
+    //        starting doing core data stuff with context
+    &lt;#NSEntityDescriptionOrNSManagedObject#&gt; * &lt;#Name#&gt; = [NSEntityDescription insertNewObjectForEntityForName:&lt;#Name#&gt; inManagedObjectContext:context];
+    //        inserting objects into the database
+    // update by kvc or property
+    //        [person setValue:@"wangjiaweni" forKey:@"name"];
+    person.id1 = @1001;
+    person.name = @"wangjianwei";
+    person.age = @23;
+    //      Querying
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:&lt;#Name#&gt;];
+    request.fetchBatchSize = 20;
+    request.fetchLimit = 100;
+    NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:&lt;#Name#&gt; ascending:YES selector:@selector(localizedStandardCompare:)];
+    request.sortDescriptors = @[sortDescriptor];
+    
+    NSPredicate * predicate1 = [NSPredicate predicateWithFormat:&lt;#FormatString#&gt;,&lt;#args#&gt;];
+    NSPredicate * predicate2 = [NSPredicate predicateWithFormat:@"name = %@",@"wangjianwei"];
+    NSPredicate * predicate3= [NSCompoundPredicate andPredicateWithSubpredicates:@[predicate1,predicate2]];
+    NSPredicate * predicate4 = [NSPredicate predicateWithFormat:@"(id1 = %@)AND(name = %@)",@1001,@"wangjianwei"];
+    request.predicate = predicate4;
+    NSError * error;
+    NSArray * &lt;#Name#&gt; = [context executeFetchRequest:request error:&amp;error];
+
+    
+    //Delete
+    NSEntityDescription * entity = [NSEntityDescription entityForName:&lt;#Name#&gt; inManagedObjectContext:context];
+    NSFetchRequest * req = [[NSFetchRequest alloc]init];
+    [req setEntity:entity];
+    [req setPredicate:predicate1];
+    [req setIncludesPropertyValues:NO];
+    NSArray * datas = [context executeFetchRequest:req error:&amp;error];
+    if(!error&amp;&amp; datas &amp;&amp;[datas count]){
+        for (NSManagedObject * obj in datas) {
+            [context deleteObject:obj];
+        }
+        if (![context save:&amp;error]) {
+//            DDLog(@"%@",error);
+        }
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6E4E0508-A759-4FAC-A66A-7ECA52D2B5F5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Code.DocumentCoreData</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

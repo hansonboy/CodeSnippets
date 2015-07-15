@@ -3,27 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>CodeCloseMangedDocument</string>
+	<string>CodeInit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>-(void)closeDocumentWithCompletionHandler:(void(^)(BOOL success))completionHandler{
-    [self.document closeWithCompletionHandler:^(BOOL success) {
-        completionHandler(success);
-    }];
-    
-}</string>
+	<string>    self = [super init];
+    if (self) {
+        &lt;#CODE#&gt;
+    }
+    return self;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C17581BE-CD79-4A65-8E8E-AD785F07B1A0</string>
+	<string>5C53C9C8-3C02-45C8-9644-187F5AA624C7</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Code.closeManagedDocument</string>
+	<string>Code.Init</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

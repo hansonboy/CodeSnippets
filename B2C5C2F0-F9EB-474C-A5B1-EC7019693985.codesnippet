@@ -9,10 +9,11 @@
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//   saving the document
-[&lt;#UIMangedDocument#&gt; saveToURL:&lt;#UIMangedDocument#&gt;.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
-//        block to execute when save is done
-    }];</string>
+	<string>-(void)saveDocumentWithCompletionHandler:(void(^)(BOOL success))completionHandler{
+    [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
+        completionHandler(success);
+    }];
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>B2C5C2F0-F9EB-474C-A5B1-EC7019693985</string>
 	<key>IDECodeSnippetLanguage</key>
@@ -22,6 +23,6 @@
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -9,21 +9,15 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>-(void)openDocument:(UIManagedDocument *)document withCompletionHandler:(void(^)(BOOL success))completionHandler{
-    //create UIMangedDoucment
-    NSFileManager * fileManager = [NSFileManager defaultManager];
-    NSURL * documentsDirectory = [[fileManager URLsForDirectory:NSDocumentationDirectory inDomains:NSUserDomainMask]firstObject];
-    NSString * documentName = @"MyDocument";
-    NSURL * url = [documentsDirectory URLByAppendingPathComponent:documentName];
-    document = [[UIManagedDocument alloc]initWithFileURL:url];
-    //open or create UImangedDocument
+	<string>-(void)openDocumentWithCompletionHandler:(void(^)(BOOL success))completionHandler{
+    NSURL *url = self.document.fileURL;
     BOOL fileExists = [[NSFileManager defaultManager]fileExistsAtPath:[url path]];
     if (fileExists) {
-        [document openWithCompletionHandler:^(BOOL success) {
-            completionHandler(success); }];
+        [self.document openWithCompletionHandler:^(BOOL success) {
+            completionHandler(success);
+        }];
     }else{
-        [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
-            // block to execute when create is done
+        [self.document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
             completionHandler(success);
         }];
     }
@@ -37,6 +31,6 @@
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

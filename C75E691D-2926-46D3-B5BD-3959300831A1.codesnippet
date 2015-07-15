@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>CodeInitManagedDocument</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)initManagedDocument:(UIManagedDocument*)document withDocumentName:(NSString*)documentName{
+    //create UIMangedDoucment
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    NSURL * documentsDirectory = [[fileManager URLsForDirectory:NSDocumentationDirectory inDomains:NSUserDomainMask]firstObject];
+//    NSString * documentName = @"MyDocument";
+    NSURL * url = [documentsDirectory URLByAppendingPathComponent:documentName];
+    document = [[UIManagedDocument alloc]initWithFileURL:url];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C75E691D-2926-46D3-B5BD-3959300831A1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Code.InitManagedDocument</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
