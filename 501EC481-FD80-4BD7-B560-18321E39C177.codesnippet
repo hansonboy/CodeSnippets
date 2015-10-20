@@ -3,21 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWLog</string>
+	<string>JWBgcolor</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define JWLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)</string>
+	<string>&lt;#name#&gt;.backgroundColor = [UIColor &lt;#color#&gt;];
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FB592D18-289F-46AA-A5B4-ED2C83219AB7</string>
+	<string>501EC481-FD80-4BD7-B560-18321E39C177</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWLog</string>
+	<string>JWbgcolor</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

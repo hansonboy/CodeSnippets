@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWInitModel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(instancetype)initWithDic:(NSDictionary*)dic{
+    if(self = [super init]){
+        [self setValuesForKeysWithDictionary:dic];
+    }
+    return self;
+}
+
++&lt;#classMethod#&gt;{
+    return [[self alloc]initWithDic:dic];
+}
+
++(NSArray*)&lt;#ClassMethod#&gt;{
+    NSArray * dicArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"&lt;#plistName#&gt;" ofType:nil]];
+    NSArray * models = [NSArray array];
+    for (NSDictionary * dic in dicArray) {
+        &lt;#Model#&gt; * model = [self &lt;#classMethod#&gt;];
+        models = [models arrayByAddingObject:model];
+    }
+    return models;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>37196BFB-541E-42F1-AF3C-B5DD23F90158</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWInitModel</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

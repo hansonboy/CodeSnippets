@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWXMLParserDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma  mark - NSXMLParserDelegate
+-(void)parserDidStartDocument:(NSXMLParser *)parser{
+    NSLog(@"%@--开始解析文档",[NSThread currentThread]);
+}
+-(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
+    NSLog(@"%@--开始解析节点--%@---%@",[NSThread currentThread],elementName,attributeDict);
+}
+-(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
+    NSLog(@"%@--解析节点内容--%@",[NSThread currentThread],string );
+    [self.contentStr appendString:string];
+}
+-(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    NSLog(@"%@--结束解析节点---%@",[NSThread currentThread],elementName);
+    
+    
+}
+-(void)parserDidEndDocument:(NSXMLParser *)parser{
+    NSLog(@"结束解析文档--%@",[NSThread currentThread]);
+    dispatch_async(dispatch_get_main_queue(), ^{
+       
+    });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F57D0E9C-D21C-4207-AC93-4AA0561BC4A6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWXMLParserDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

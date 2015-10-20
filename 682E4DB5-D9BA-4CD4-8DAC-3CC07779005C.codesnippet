@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWLog</string>
+	<string>JWModel</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#define JWLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)</string>
+	<string>-(instancetype)initWithDic:(NSDictionary*)dic;
+
++(instancetype)&lt;#name#&gt;WithDic:(NSDictionary*)dic;
+
++(NSArray*)&lt;#name#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FB592D18-289F-46AA-A5B4-ED2C83219AB7</string>
+	<string>682E4DB5-D9BA-4CD4-8DAC-3CC07779005C</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWLog</string>
+	<string>JWModel</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

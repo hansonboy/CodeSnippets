@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWKeyBoardChangeFrame</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardChangeFrame:) name:UIKeyboardWillShowNotification object:nil];
+[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardChangeFrame:) name:UIKeyboardWillHideNotification object:nil];
+
+-(void)keyBoardChangeFrame:(NSNotification*)notification{
+    NSLog(@"%@",notification);
+    NSDictionary * userInfo = notification.userInfo;
+    CGRect begin = [userInfo[UIKeyboardFrameBeginUserInfoKey]CGRectValue];
+    CGRect end = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat deltaY = end.origin.y  - begin.origin.y;
+    
+    float duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey]floatValue];
+    NSLog(@"%f",deltaY);
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.view.transform =  CGAffineTransformTranslate(self.view.transform, 0, deltaY);
+    }];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E83892F0-2528-4A0C-B1C2-8BF70C7FDBD3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWKeyBoardChangeFrame</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
