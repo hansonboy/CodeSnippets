@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWXMLDOM</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>GDataXMLDocument *xmlDocument = [[GDataXMLDocument alloc]initWithData:data encoding:NSUTF8StringEncoding error:NULL];
+        NSLog(@"xmlDocument:%@",xmlDocument);
+        GDataXMLElement *rootElement = [xmlDocument rootElement];
+        NSLog(@"rootElement:%@----attibutes:%@",rootElement,rootElement.attributes);
+        NSArray *children = [rootElement children];
+        NSLog(@"rootElement's children:%@---",children);
+        
+        NSMutableArray *array = [NSMutableArray array];
+        
+        
+        [children enumerateObjectsUsingBlock:^(GDataXMLElement * obj, NSUInteger idx, BOOL *stop) {
+            NSLog(@"GDataXMLNode1:%@---attri%@",obj,obj.attributes);
+            
+            [obj.attributes enumerateObjectsUsingBlock:^(GDataXMLNode * obj, NSUInteger idx, BOOL *stop) {
+                
+            }];
+            
+            
+            
+            NSArray *childrenNode = [obj children];
+            [childrenNode enumerateObjectsUsingBlock:^(GDataXMLElement  *obj, NSUInteger idx, BOOL *stop) {
+                NSLog(@"GDataXMLNode2:%@,name=%@,stringValue=%@",obj,obj.name,obj.stringValue);
+                
+                
+            }];
+            
+            
+        }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C66629D4-9263-4559-B4E5-FB951CBE6DBD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWXMLDOM</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
