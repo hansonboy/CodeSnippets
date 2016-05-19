@@ -9,10 +9,12 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    if(self = [super init]){
-        
+	<string>- (instancetype)init {
+    if (self = [super init]) {
+        &lt;#Your code...#&gt;
     }
-    return self;</string>
+    return  self;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>D2D085A7-F006-4CDF-B927-4BD516FDBB33</string>
 	<key>IDECodeSnippetLanguage</key>

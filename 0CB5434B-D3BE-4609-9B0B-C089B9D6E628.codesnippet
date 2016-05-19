@@ -9,10 +9,12 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>if (_&lt;#Name#&gt; == nil) {
-        &lt;#statements#&gt;
+	<string>- (&lt;#Type#&gt; *)&lt;#name#&gt; {
+    if (!_&lt;#name#&gt;) {
+        _&lt;#name#&gt; = [[&lt;#Type#&gt; alloc]init];
     }
-    return _&lt;#Name#&gt;;</string>
+    return  _&lt;#name#&gt;;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0CB5434B-D3BE-4609-9B0B-C089B9D6E628</string>
 	<key>IDECodeSnippetLanguage</key>

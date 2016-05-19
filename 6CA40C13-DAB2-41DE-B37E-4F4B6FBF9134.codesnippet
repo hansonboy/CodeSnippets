@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWControllerImp</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - setter getter
+
+#pragma mark -  life cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self setupNavigationBar];
+    
+    [self setupSubviews];
+    
+    [self setupConstaints];
+    
+    [self setupSubviewsStates];
+}
+
+
+#pragma mark - 设置子视图及约束
+- (void)setupNavigationBar {
+    self.title = @"&lt;#欢迎登录#&gt;";
+
+}
+
+- (void)setupSubviews {
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    
+}
+
+- (void)setupConstaints {
+    
+
+    
+}
+
+- (void)setupSubviewsStates {
+
+    
+}
+
+#pragma mark - target action</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6CA40C13-DAB2-41DE-B37E-4F4B6FBF9134</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWControllerImp</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

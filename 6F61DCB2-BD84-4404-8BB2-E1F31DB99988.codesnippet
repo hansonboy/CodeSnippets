@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWSQLImp</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassInterfaceVariables</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+- (BOOL)saveData {
+// 需要在block中进行修改变量值，所以用__block修饰
+    __block BOOL isSuccess = NO;
+    
+    // 批量操作，选择事务
+    [[FMDatabaseQueue shareInstense] inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        
+        for (HomePageCellViewModel *cellViewModel in self.dataSource) {
+            
+            ArticleModel *articleModel = cellViewModel.articleModel;
+            
+            // 存储
+            isSuccess = [db executeUpdate:saveArticleSQL, articleModel.articleId, articleModel.title, articleModel.author.name, [articleModel.categorys.lastObject name]];
+            // 如果有失败，则停止，跳出循环
+            if (!isSuccess) {
+                break;
+            }
+        }
+        // 如果遇到失败，则回滚，存储失败
+        if (!isSuccess) {
+            *rollback = YES;
+            return;
+        }
+    }];
+    
+    return isSuccess;
+}
+
+- (BOOL)deleteData {
+    
+    __block BOOL isSuccess = NO;
+    
+    [[FMDatabaseQueue shareInstense] inDatabase:^(FMDatabase *db) {
+        
+        isSuccess = [db executeUpdate:deleteArticleSQL];
+    }];
+    
+    return isSuccess;
+}
+
+- (void)loadData {
+    
+    [[FMDatabaseQueue shareInstense] inDatabase:^(FMDatabase *db) {
+        
+        // 读取数据
+        FMResultSet *set = [db executeQuery:selectArticleSQL];
+        
+        // 循环读取，直到读完
+        while ([set next]) {
+            ArticleModel *article = [ArticleModel new];
+            article.title = [set objectForColumnName:@"title"];
+            article.articleId = [set objectForColumnName:@"id"];
+            article.author.name = [set objectForColumnName:@"authorname"];
+            CategoryModel *category = [[CategoryModel alloc]init];
+            category.name = [set objectForColumnName:@"categoryname"];
+            article.categorys = @[category];
+            HomePageCellViewModel *cellViewModel = [[HomePageCellViewModel alloc] initWithArticleModel:article];
+            [self.articleViewModels addObject:cellViewModel];
+        }
+        // 关闭结果集
+        [set close];
+    }];
+    // 读取完后重新赋值给dataSource
+    self.dataSource = [self.articleViewModels copy];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6F61DCB2-BD84-4404-8BB2-E1F31DB99988</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWSQLImp</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
