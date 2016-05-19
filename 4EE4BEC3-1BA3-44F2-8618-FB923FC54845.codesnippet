@@ -3,19 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWAssign</string>
+	<string>JWTableviewlazyload</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, assign) &lt;#type#&gt; &lt;#Name#&gt;;</string>
+	<string>- (UITableView *)&lt;#name#&gt; {
+    if (!_&lt;#name#&gt;) {
+        _&lt;#name#&gt; = [[UITableView alloc]init];
+        _&lt;#name#&gt;.dataSource = self;
+        _&lt;#name#&gt;.delegate = self;
+    }
+    return  _&lt;#name#&gt;;
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FFFD1C5B-F5B8-467C-A003-9183577F02A7</string>
+	<string>4EE4BEC3-1BA3-44F2-8618-FB923FC54845</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWAssign</string>
+	<string>JWTableviewlazyload</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

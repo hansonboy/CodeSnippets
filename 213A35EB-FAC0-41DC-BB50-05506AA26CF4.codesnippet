@@ -3,19 +3,45 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWAssign</string>
+	<string>JWViewImp</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, assign) &lt;#type#&gt; &lt;#Name#&gt;;</string>
+	<string>#pragma mark -  getter setter
+
+
+#pragma mark - initializer
+
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setupSubviews];
+    }
+    return  self;
+}
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self setupConstraints];
+}
+- (void)setupSubviews {
+
+}
+
+- (void)setupConstraints {
+    
+}
+
+#pragma mark - action target
+
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FFFD1C5B-F5B8-467C-A003-9183577F02A7</string>
+	<string>213A35EB-FAC0-41DC-BB50-05506AA26CF4</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWAssign</string>
+	<string>JWViewImp</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

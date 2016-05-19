@@ -3,19 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWAssign</string>
+	<string>JWFrameSet</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, assign) &lt;#type#&gt; &lt;#Name#&gt;;</string>
+	<string>    CGFloat showCurrenValueLabelX = 0;
+    CGFloat showCurrenValueLabelY = kLoginNextY(self.titleLabel);
+    CGFloat showCurrenValueLabelW = kRulerW;
+    CGFloat showCurrenValueLabelH = kLoginTextFieldH;
+    self.ruler.frame = CGRectMake(showCurrenValueLabelX, showCurrenValueLabelY, showCurrenValueLabelW, showCurrenValueLabelH);</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FFFD1C5B-F5B8-467C-A003-9183577F02A7</string>
+	<string>AB605076-B046-43E5-9678-AA1CCC6DDA04</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWAssign</string>
+	<string>JWFrameSet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

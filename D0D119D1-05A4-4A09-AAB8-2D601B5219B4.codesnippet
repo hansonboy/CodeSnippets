@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWButtonInit</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> _sendCheckNumBtn = [[UIButton alloc]init];
+        _sendCheckNumBtn.backgroundColor = kLoginSendCheckNumBackgroundColor;
+        
+        [_sendCheckNumBtn setTitle:@"&lt;#发送验证码#&gt;" forState:UIControlStateNormal];
+        [_sendCheckNumBtn setTitle:@"&lt;#发送验证码#&gt;" forState:UIControlStateHighlighted];
+        [_sendCheckNumBtn setTitleColor:kLoginBlueBackgroundColor forState:UIControlStateNormal];
+        [_sendCheckNumBtn setTitleColor:kLoginBlueBackgroundColor forState:UIControlStateHighlighted];
+        [_sendCheckNumBtn addTarget:self action:@selector(sendCheckNum) forControlEvents:UIControlEventTouchUpInside];
+//        [_sendCheckNumBtn gy_setBorderStyleWithBorderColor:kLoginBorderColor borderWidth:kLoginBorderWidth borderRadius:kLoginBorderRadius];
+        kLoginSetBorderStyle(_sendCheckNumBtn);
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D0D119D1-05A4-4A09-AAB8-2D601B5219B4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWButtonInit</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

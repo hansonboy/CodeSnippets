@@ -3,19 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWAssign</string>
+	<string>JWLabelSet</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, assign) &lt;#type#&gt; &lt;#Name#&gt;;</string>
+	<string>        _showCurrenValueLabel = [[UILabel alloc]init];
+        _showCurrenValueLabel.backgroundColor = [UIColor blueColor];
+        _showCurrenValueLabel.textColor = [UIColor blackColor];
+        _showCurrenValueLabel.textAlignment = NSTextAlignmentCenter;
+        _showCurrenValueLabel.font = kLoginFont;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FFFD1C5B-F5B8-467C-A003-9183577F02A7</string>
+	<string>BE7D87B2-E962-4AFA-9EE2-4D869C6FDEF7</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWAssign</string>
+	<string>JWLabelSet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

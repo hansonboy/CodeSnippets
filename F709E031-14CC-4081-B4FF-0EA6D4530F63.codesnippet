@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWAttributeTextSet</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  给定text ，然后将前5个字符的颜色设为灰色，后面的字体颜色设为 黑色，字体大小设定为14，字体段落行距设为 7
+ *
+ *  @param text 待处理的text
+ *
+ *  @return 返回带属性的字符串
+ */
+- (NSAttributedString *)attributedText:(NSString *)text {
+    
+    
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc]initWithString:text];
+    
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = 7;// 字体的行间距
+    
+    //添加段落性质
+    [attributedText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, attributedText.length)];
+    
+    //添加字体大小
+    [attributedText addAttribute:NSFontAttributeName value:kLoginFont14 range:NSMakeRange(0,attributedText.length)];
+    
+    //不同的range 添加不同的颜色
+    [attributedText addAttribute:NSForegroundColorAttributeName value:kLoginGrayTextColor range:NSMakeRange(0, 5)];
+    
+    [attributedText addAttribute:NSForegroundColorAttributeName value:kLoginDarkTextColor range:NSMakeRange(4,attributedText.length-5)];
+    
+    return attributedText;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F709E031-14CC-4081-B4FF-0EA6D4530F63</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWAttributeTextSet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

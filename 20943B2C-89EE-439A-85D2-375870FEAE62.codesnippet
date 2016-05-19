@@ -3,19 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWAssign</string>
+	<string>JWAnnotation</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, assign) &lt;#type#&gt; &lt;#Name#&gt;;</string>
+	<string>/**  &lt;# #&gt;*/
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>FFFD1C5B-F5B8-467C-A003-9183577F02A7</string>
+	<string>20943B2C-89EE-439A-85D2-375870FEAE62</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>注释</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWAssign</string>
+	<string>JWAnnotation</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
