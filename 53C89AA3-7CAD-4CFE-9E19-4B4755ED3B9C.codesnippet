@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWMapGecoderDecode</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> // 2.反地理编码
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:latitude.floatValue longitude:longitude.floatValue];
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        // 如果有错误,或者解析出来的地址数量为0
+        if (placemarks.count == 0 || error) return ;
+        
+        // 取出地标,就可以取出地址信息,以及CLLocation对象
+        CLPlacemark *pm = [placemarks firstObject];
+        
+#warning 注意:如果是取出城市的话,需要判断locality属性是否有值(直辖市时,该属性为空)
+        if (pm.locality) {
+            self.resultLabel.text = pm.locality;
+        } else {
+            self.resultLabel.text = pm.administrativeArea;
+        }
+    }];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>53C89AA3-7CAD-4CFE-9E19-4B4755ED3B9C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWMapGecoderDecode</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

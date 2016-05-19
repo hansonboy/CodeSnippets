@@ -3,24 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWLazyLoad</string>
+	<string>JWLayoutsubviews</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (&lt;#type#&gt; *)&lt;#name#&gt; {
-    if (_&lt;#name#&gt; == nil) {
-        _&lt;#name#&gt; = [[&lt;#type#&gt; alloc]init];
-    }
-    return _&lt;#name#&gt;;
+	<string>-(void)layoutSubviews{
+    [super layoutSubviews];
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0CB5434B-D3BE-4609-9B0B-C089B9D6E628</string>
+	<string>250D4DE7-6A5B-4083-B090-9A5D8B953A50</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWLazyLoad</string>
+	<string>JWLayoutsubviews</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

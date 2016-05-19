@@ -3,24 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWLazyLoad</string>
+	<string>JWMapViewInit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (&lt;#type#&gt; *)&lt;#name#&gt; {
-    if (_&lt;#name#&gt; == nil) {
-        _&lt;#name#&gt; = [[&lt;#type#&gt; alloc]init];
-    }
-    return _&lt;#name#&gt;;
-}</string>
+	<string>    self.mapview.delegate = self;
+    self.mapview.userTrackingMode = MKUserTrackingModeFollow;
+    self.mapview.showsUserLocation = YES;
+        </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0CB5434B-D3BE-4609-9B0B-C089B9D6E628</string>
+	<string>7F5EA33A-0F1A-4E51-A0A9-ECFA17D8EAA7</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWLazyLoad</string>
+	<string>JWMapViewInit</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

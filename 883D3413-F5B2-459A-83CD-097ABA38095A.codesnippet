@@ -3,24 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWLazyLoad</string>
+	<string>jwinit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (&lt;#type#&gt; *)&lt;#name#&gt; {
-    if (_&lt;#name#&gt; == nil) {
-        _&lt;#name#&gt; = [[&lt;#type#&gt; alloc]init];
+	<string>-(instancetype)init{
+    if (self = [super init]) {
+        
     }
-    return _&lt;#name#&gt;;
+    return self;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0CB5434B-D3BE-4609-9B0B-C089B9D6E628</string>
+	<string>883D3413-F5B2-459A-83CD-097ABA38095A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWLazyLoad</string>
+	<string>JWInit</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

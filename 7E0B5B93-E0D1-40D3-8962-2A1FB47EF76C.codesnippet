@@ -3,24 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWLazyLoad</string>
+	<string>JWMapSetRegion</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (&lt;#type#&gt; *)&lt;#name#&gt; {
-    if (_&lt;#name#&gt; == nil) {
-        _&lt;#name#&gt; = [[&lt;#type#&gt; alloc]init];
-    }
-    return _&lt;#name#&gt;;
-}</string>
+	<string>    // 3.设置显示用户的位置和经纬度
+    CLLocationCoordinate2D center = userLocation.location.coordinate;
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.052996, 0.039880);
+    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+    [mapView setRegion:region animated:YES];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0CB5434B-D3BE-4609-9B0B-C089B9D6E628</string>
+	<string>7E0B5B93-E0D1-40D3-8962-2A1FB47EF76C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWLazyLoad</string>
+	<string>JWMapSetRegion</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWCopy</string>
+	<string>jwcopy</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic ,copy) &lt;#type#&gt; *&lt;#Name#&gt;;</string>
+	<string>@property (nonatomic, copy) &lt;#type#&gt; *&lt;#Name#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>717DA062-2E0E-4332-A9C2-84A6C4DA7BF8</string>
 	<key>IDECodeSnippetLanguage</key>

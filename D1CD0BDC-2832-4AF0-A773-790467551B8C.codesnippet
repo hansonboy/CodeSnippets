@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWMapNavigate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  导航
+ */
+- (IBAction)navigate {
+    // 1.获取起始的MKMapItem
+    MKMapItem *sourceItem = [MKMapItem mapItemForCurrentLocation];
+    
+    // 2.编码出即将到达的MKMapItem
+    [self.geocoder geocodeAddressString:self.destinationfield.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        // 2.1 获取最后一个CLPlaceMark对象
+        MKPlacemark *mkpm = [[MKPlacemark alloc] initWithPlacemark:[placemarks lastObject]];
+        // 2.2 创建达到的MKMapItem
+        MKMapItem *destinationItem = [[MKMapItem alloc] initWithPlacemark:mkpm];
+        // 2.3 开始导航
+        [self startNavigateWithSourceItem:sourceItem destinationItem:destinationItem];
+    }];
+}
+
+/**
+ *  开始导航
+ *
+ *  @param sourceItem      起点
+ *  @param destinationItem 终点
+ */
+- (void)startNavigateWithSourceItem:(MKMapItem *)sourceItem destinationItem:(MKMapItem *)destinationItem
+{
+    NSArray *items = @[sourceItem, destinationItem];
+    
+    // 可选参数
+    NSMutableDictionary *options = [NSMutableDictionary dictionary];
+    // 导航模式:驾车导航 步行导航
+    options[MKLaunchOptionsDirectionsModeKey] = MKLaunchOptionsDirectionsModeDriving;
+    // 是否要显示交通路况
+    options[MKLaunchOptionsShowsTrafficKey] = @YES;
+    
+    [MKMapItem openMapsWithItems:items launchOptions:options];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D1CD0BDC-2832-4AF0-A773-790467551B8C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWMapNavigate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

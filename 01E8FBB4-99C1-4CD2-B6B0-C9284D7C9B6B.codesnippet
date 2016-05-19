@@ -3,24 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWLazyLoad</string>
+	<string>jwcolor</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (&lt;#type#&gt; *)&lt;#name#&gt; {
-    if (_&lt;#name#&gt; == nil) {
-        _&lt;#name#&gt; = [[&lt;#type#&gt; alloc]init];
-    }
-    return _&lt;#name#&gt;;
-}</string>
+	<string>#define color(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>0CB5434B-D3BE-4609-9B0B-C089B9D6E628</string>
+	<string>01E8FBB4-99C1-4CD2-B6B0-C9284D7C9B6B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWLazyLoad</string>
+	<string>JWColor</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
