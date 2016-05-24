@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jwmjheader</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>WEAKSELF
+self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    
+    //        请求数据
+    [weakSelf loadDataIsPulledUp:YES];
+}];
+
+self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    [weakSelf loadDataIsPulledUp:NO];
+}];
+[self.tableView.mj_header beginRefreshing];
+#pragma mark - 请求数据
+
+//1.获取数据，是否首次刷新，判断是否刷新数据，上拉追加数据，下拉刷新先删除然后追加数据最后刷新
+- (void)loadDataIsPulledUp:(BOOL)isPulledUp{
+    
+    if (isPulledUp) {
+        //1. 下拉刷新删除所有数据
+        //        [self.dataSource removeAllObjects];
+        [self.collectionView reloadData];
+    }
+    
+    WEAKSELF
+    //开始请求数据进行下载
+    [WXBNetworking postWithUrl:Exchange_API refreshCache:YES params:@{} success:^(id response) {
+        //0.下拉停止刷新
+        NSInteger oldCount = self.dataSource.count;
+        //1.根据response 添加对象
+        NSArray *array = response[@"para"];
+        for (NSDictionary *dic in array) {
+            [weakSelf.dataSource addObject:[GYCommodityModel yy_modelWithDictionary:dic]];
+        }
+        if (oldCount!=self.dataSource.count) {
+            
+            [weakSelf.collectionView reloadData];
+        }
+        [weakSelf endRefresh];
+        //2.加载完毕，刷新表格
+        
+    } fail:^(NSError *error) {
+        //        下拉停止刷新
+        [weakSelf  endRefresh];
+        
+        //        提醒用户当前错误
+        
+        
+    }];
+    
+}
+
+
+- (void)endRefresh{
+    
+    if ([self.collectionView.mj_header isRefreshing] ) {
+        [self.collectionView.mj_header endRefreshing];
+    }
+    if ([self.collectionView.mj_footer isRefreshing]) {
+        [self.collectionView.mj_footer endRefreshing];
+    }
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A796C719-2B54-4B50-8ECC-3D4250EB8274</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>jwmjheader</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
