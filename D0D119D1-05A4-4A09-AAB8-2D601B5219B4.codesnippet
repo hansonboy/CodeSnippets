@@ -3,29 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWButtonInit</string>
+	<string>JWButtonSet</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string> _sendCheckNumBtn = [[UIButton alloc]init];
-        _sendCheckNumBtn.backgroundColor = kLoginSendCheckNumBackgroundColor;
+	<string>- (UIButton *)&lt;#name#&gt; {
+    if (!_&lt;#name#&gt;) {
+        _&lt;#name#&gt; = [[UIButton alloc]init];
+        _&lt;#name#&gt;.backgroundColor = &lt;#[UIColor whiteColor]#&gt;;
+        [_&lt;#name#&gt; setTitle:@"&lt;#确认支付#&gt;" forState:UIControlStateNormal];
+        [_&lt;#name#&gt; setTitle:@"&lt;#确认支付#&gt;" forState:UIControlStateHighlighted];
+        [_&lt;#name#&gt; setTitleColor:&lt;#[UIColor whiteColor]#&gt; forState:UIControlStateNormal];
+        [_&lt;#name#&gt; setTitleColor:&lt;#[UIColor whiteColor]#&gt; forState:UIControlStateHighlighted];
+        _&lt;#name#&gt;.titleLabel.font = &lt;#[UIFont systemFontOfSize:17]#&gt;
+        [_&lt;#name#&gt; setImage:[UIImage imageNamed:&lt;#name#&gt;] forState:UIControlStateNormal];
+        [_&lt;#name#&gt; setImage:[UIImage imageNamed:&lt;#name#&gt;] forState:UIControlStateHighlighted];
+        [_&lt;#name#&gt;  addTarget:self action:@selector(&lt;#selector#&gt;) forControlEvents:UIControlEventTouchUpInside];
         
-        [_sendCheckNumBtn setTitle:@"&lt;#发送验证码#&gt;" forState:UIControlStateNormal];
-        [_sendCheckNumBtn setTitle:@"&lt;#发送验证码#&gt;" forState:UIControlStateHighlighted];
-        [_sendCheckNumBtn setTitleColor:kLoginBlueBackgroundColor forState:UIControlStateNormal];
-        [_sendCheckNumBtn setTitleColor:kLoginBlueBackgroundColor forState:UIControlStateHighlighted];
-        [_sendCheckNumBtn addTarget:self action:@selector(sendCheckNum) forControlEvents:UIControlEventTouchUpInside];
-//        [_sendCheckNumBtn gy_setBorderStyleWithBorderColor:kLoginBorderColor borderWidth:kLoginBorderWidth borderRadius:kLoginBorderRadius];
-        kLoginSetBorderStyle(_sendCheckNumBtn);
-</string>
+    }
+    return  _confirmPayButton;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>D0D119D1-05A4-4A09-AAB8-2D601B5219B4</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWButtonInit</string>
+	<string>JWButtonSet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWTableViewCell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self.contentView addSubview:self.&lt;#name#&gt;];
+        [self.contentView addSubview:self.&lt;#name#&gt;];
+        [self.contentView addSubview:self.&lt;#name#&gt;];
+    }
+    return self;
+}
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    __weak typeof(self) weakSelf = self;
+    [weakSelf.&lt;#name#&gt; mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edes.equalTo(&lt;#name#&gt;);
+        make.top.equalTo(&lt;#name#&gt;);
+        make.bottom.equalTo(&lt;#name#&gt;);
+        make.left.equqlTo(&lt;#name#&gt;);
+        make.right.equalTo(&lt;#name#&gt;);
+        make.width.equalTo(&lt;#name#&gt;);
+        make.height.equalTo(&lt;#name#&gt;);
+        make.size.equalTo(&lt;#name#&gt;);
+        make.centerX.equatlTo(&lt;#name#&gt;);
+        make.centerY.equalTo(&lt;#name#&gt;);
+        make.center.equalTo(&lt;#anme#&gt;);
+        make.baseline.equalTo(&lt;#name#&gt;);
+    }];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>945E2FAD-EAA7-4AA7-B55C-345FBBA8061B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWTableViewCell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

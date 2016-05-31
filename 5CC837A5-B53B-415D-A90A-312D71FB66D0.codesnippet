@@ -9,8 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>
-#pragma mark - table view data source
+	<string>#pragma mark - table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -23,26 +22,39 @@
     
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"&lt;#identifier#&gt;";
+    static NSString *identifier = @"assessListCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryView = [[UILabel alloc]init];
         cell.textLabel.textColor = kLoginDarkTextColor;
-        cell.detailTextLabel.textColor = kLoginDarkTextColor;
+        cell.textLabel.font = kLoginFont17;
+        cell.detailTextLabel.font = kLoginFont14;
+        cell.detailTextLabel.textColor = kLoginGrayTextColor;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 20)];
+        label.backgroundColor = [UIColor yellowColor];
+        label.font = kLoginFont14;
+        label.textColor = kLoginGrayTextColor;
+        cell.accessoryView = label;
     }
-    cell.textLabel.text = @"";
-    return cell;
     
+    GYAssessModel *assessModel = [self.datasource objectAtIndex:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text = assessModel.name;
+    cell.detailTextLabel.text = assessModel.desc;
+    UILabel *label = (UILabel *)cell.accessoryView;
+    label.text = assessModel.otherInfo;
+    return cell;
 }
 
 #pragma mark - table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-</string>
+    GYLog(@"");
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>5CC837A5-B53B-415D-A90A-312D71FB66D0</string>
 	<key>IDECodeSnippetLanguage</key>

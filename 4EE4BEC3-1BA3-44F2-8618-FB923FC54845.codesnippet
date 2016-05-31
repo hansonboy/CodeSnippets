@@ -9,13 +9,22 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UITableView *)&lt;#name#&gt; {
-    if (!_&lt;#name#&gt;) {
-        _&lt;#name#&gt; = [[UITableView alloc]init];
-        _&lt;#name#&gt;.dataSource = self;
-        _&lt;#name#&gt;.delegate = self;
+	<string>- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]init];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.tableFooterView = [[UIView alloc]init];
+        _tableView.backgroundColor = &lt;#[UIColor whiteColor]#&gt;;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     }
-    return  _&lt;#name#&gt;;
+    return  _tableView;
+}
+- (NSMutableArray *)datasource {
+    if (!_datasource) {
+        _datasource = [[NSMutableArray alloc]init];
+    }
+    return  _datasource;
 }
 </string>
 	<key>IDECodeSnippetIdentifier</key>
