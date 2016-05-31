@@ -3,19 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>jwcopy</string>
+	<string>JWMapViewInit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic, copy)&lt;#type#&gt; *&lt;#Name#&gt;;</string>
+	<string>    self.mapview.delegate = self;
+    self.mapview.userTrackingMode = MKUserTrackingModeFollow;
+    self.mapview.showsUserLocation = YES;
+        </string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>717DA062-2E0E-4332-A9C2-84A6C4DA7BF8</string>
+	<string>7F5EA33A-0F1A-4E51-A0A9-ECFA17D8EAA7</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWCopy</string>
+	<string>JWMapViewInit</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,19 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>jwcopy</string>
+	<string>Log</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic, copy)&lt;#type#&gt; *&lt;#Name#&gt;;</string>
+	<string>#ifdef  DEBUG
+#define JWLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define JWLog(xx, ...)
+#endif</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>717DA062-2E0E-4332-A9C2-84A6C4DA7BF8</string>
+	<string>BC50CA38-5E7A-4A39-9821-412C2490E1BA</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWCopy</string>
+	<string>JWLog</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

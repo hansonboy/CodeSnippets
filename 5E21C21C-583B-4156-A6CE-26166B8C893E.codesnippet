@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>jwcopy</string>
+	<string>JWRandomColor</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>Preprocessor</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic, copy)&lt;#type#&gt; *&lt;#Name#&gt;;</string>
+	<string>#define randomColor  color(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>717DA062-2E0E-4332-A9C2-84A6C4DA7BF8</string>
+	<string>5E21C21C-583B-4156-A6CE-26166B8C893E</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWCopy</string>
+	<string>JWRandomColor</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

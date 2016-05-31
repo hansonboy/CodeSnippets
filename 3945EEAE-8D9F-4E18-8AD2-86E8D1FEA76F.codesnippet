@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWMapDrawLine</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+/**
+ *  画线
+ */
+- (IBAction)drawLine {
+    // 退出键盘
+    [self.view endEditing:YES];
+    
+    // 获取起始点MKMapItem
+    MKMapItem *sourceItem = [MKMapItem mapItemForCurrentLocation];
+    
+    // 编码出终点的MKMapItem
+    [self.geocoder geocodeAddressString:self.destinationfield.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        // 通过CLPlaceMark创建MKPlacemark
+        MKPlacemark *mkpm = [[MKPlacemark alloc] initWithPlacemark:[placemarks lastObject]];
+        
+        // 添加大头针
+        MyAnnotation *anno = [[MyAnnotation alloc] init];
+        anno.coordinate = mkpm.location.coordinate;
+        if (mkpm.locality == nil) {
+            anno.title = mkpm.administrativeArea;
+        } else {
+            anno.title = mkpm.locality;
+        }
+        anno.subtitle = mkpm.name;
+        [self.mapView addAnnotation:anno];
+        
+        // 创建终点的MKMapItem
+        MKMapItem *destinationItem = [[MKMapItem alloc] initWithPlacemark:mkpm];
+        
+        // 开始画线
+        [self drawLineWithSourceItem:sourceItem destination:destinationItem];
+    }];
+}
+
+/**
+ *  开始画线
+ *
+ *  @param sourceItem    起点
+ *  @param destinateItem 终点
+ */
+- (void)drawLineWithSourceItem:(MKMapItem *)sourceItem destination:(MKMapItem *)destinateItem
+{
+    // 创建请求
+    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+    
+    // 设置起始点的MKMapItem
+    request.source = sourceItem;
+    
+    // 设置终点的MKMapItem
+    request.destination = destinateItem;
+    
+    // 创建MKDirections
+    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+    
+    // 使用MKDirections请求数据(可以请求导航的线路)
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+        for (MKRoute *route in response.routes) {
+            NSLog(@"--------");
+            NSLog(@"%fm---%fh", route.distance, route.expectedTravelTime/3600.0);
+            
+            // 添加遮盖
+            [self.mapView addOverlay:route.polyline];
+        }
+    }];
+}
+
+/**
+ *  添加遮盖时会调用该方法
+ */
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id&lt;MKOverlay&gt;)overlay
+{
+    // 创建遮盖的渲染对象
+    MKPolylineRenderer *polyRenderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    // 设置线段的款段
+    polyRenderer.lineWidth = 5;
+    // 设置线段的边框颜色
+    polyRenderer.strokeColor = [UIColor redColor];
+    // 设置线段的填充颜色
+    polyRenderer.fillColor = [UIColor blueColor];
+    
+    return polyRenderer;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3945EEAE-8D9F-4E18-8AD2-86E8D1FEA76F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWMapDrawLine</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

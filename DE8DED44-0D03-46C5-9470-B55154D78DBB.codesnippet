@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWCLLocationManagerInit</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    self.mgr = [[CLLocationManager alloc] init];
+    // iOS8请求用户授权
+    if ([self.mgr respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.mgr requestAlwaysAuthorization];
+    }
+    
+    // 设置用户跟踪模式
+    self.mapView.userTrackingMode = MKUserTrackingModeFollow;
+    
+    // 设置代理
+    self.mapView.delegate = self;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DE8DED44-0D03-46C5-9470-B55154D78DBB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWCLLocationManagerInit</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
