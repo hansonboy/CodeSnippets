@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UITableView *)tableView {
+	<string>static NSUInteger currentPage = 0;
+- (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc]init];
         _tableView.dataSource = self;
@@ -52,7 +53,7 @@
     }];
 }
 
-#pragma mark 介绍刷新状态
+#pragma mark 结束刷新状态
 - (void)endRefresh{
     
     if([self.tableView.mj_footer isRefreshing]){
