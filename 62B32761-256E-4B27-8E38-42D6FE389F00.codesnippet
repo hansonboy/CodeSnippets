@@ -9,27 +9,40 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>+(&lt;#Name#&gt; *)shared&lt;#Name#&gt;{
-    static &lt;#Name#&gt; * shared&lt;#Name#&gt;;
+	<string>//单例方法
++ (Singleton *)shared&lt;#Singleton#&gt; {
+    return [[self alloc]init];
+}
+static Singleton * _shared&lt;#Singleton#&gt; = nil;
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
     static dispatch_once_t predicate;
     dispatch_once(&amp;predicate,^{
-        shared&lt;#Name#&gt; = [[super alloc]init];
+        _shared&lt;#Singleton#&gt; = [super allocWithZone:zone];
     });
-    return shared&lt;#Name#&gt;;
+    return _shared&lt;#Singleton#&gt;;
 }
 -(id)init{
-    self = [super init];
-    if(self){
-        
-    }
-    return self;
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        _shared&lt;#Singleton#&gt; = [super init];
+    });
+    return _shared&lt;#Singleton#&gt;;
 }
-+(id)allocWithZone:(struct _NSZone *)zone{
-    return [self shared&lt;#Name#&gt;];
+
+//copy在底层 会调用copyWithZone:
+- (id)copyWithZone:(NSZone *)zone{
+    return  _shared&lt;#Singleton#&gt;;
 }
--(id)copyWithZone:(NSZone*)zone{
-    return self;
-}</string>
++ (id)copyWithZone:(struct _NSZone *)zone{
+    return  _shared&lt;#Singleton#&gt;;
+}
++ (id)mutableCopyWithZone:(struct _NSZone *)zone{
+    return _shared&lt;#Singleton#&gt;;
+}
+- (id)mutableCopyWithZone:(NSZone *)zone{
+    return _shared&lt;#Singleton#&gt;;
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>62B32761-256E-4B27-8E38-42D6FE389F00</string>
 	<key>IDECodeSnippetLanguage</key>
