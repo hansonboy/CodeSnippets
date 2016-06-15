@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tableViewRefresh</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        currentPage = 0;
+        //        [weakSelf loadDataIsPull:YES];
+    }];
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        ++currentPage;
+        //        [weakSelf loadDataIsPull:NO];
+    }];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+
+#pragma mark - 网络请求
+#pragma mark 加载数据 以后要修改
+- (void)loadDataIsPull:(BOOL) ispull{
+    WEAKSELF
+    if (ispull) {
+        [self.datasource removeAllObjects];
+    }
+    static NSString *requestAPI = @"/api/";
+    NSMutabelDictionary *params = [NSMutableDictionary dictionary];
+    [WXBNetworking postWithUrl:requestAPI refreshCache:YES params:params success:^(id response) {
+        [weakSelf endRefresh];
+    } fail:^(NSError *error) {
+        [weakSelf endRefresh];
+    }];
+}
+
+#pragma mark 介绍刷新状态
+- (void)endRefresh{
+    
+    if([self.tableView.mj_footer isRefreshing]){
+        [self.tableView.mj_footer endRefreshing];
+    }
+    if ([self.tableView.mj_header isRefreshing]) {
+        [self.tableView.mj_header endRefreshing];
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4B30965-6067-43C7-82E8-2D3BC41D04F2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>tableViewRefresh</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

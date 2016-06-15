@@ -3,21 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWParam</string>
+	<string>JWAddSubview</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#pragma mark - &lt;#your mark#&gt;</string>
+	<string>[self.view addSubview:&lt;#subview#&gt;];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BF720F02-F3CF-4911-9ACC-7F52CA4CFF62</string>
+	<string>53276BAA-5650-4BC3-B1FC-19281924E465</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>JWParam</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>jwparam</string>
+	<string>JWAddSubview</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

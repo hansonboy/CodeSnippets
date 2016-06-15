@@ -9,15 +9,60 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UITableView *)&lt;#name#&gt; {
-    if (!_&lt;#name#&gt;) {
-        _&lt;#name#&gt; = [[UITableView alloc]init];
-        _&lt;#name#&gt;.dataSource = self;
-        _&lt;#name#&gt;.delegate = self;
+	<string>static NSUInteger currentPage = 0;
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]init];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.tableFooterView = [[UIView alloc]init];
+
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            currentPage = 0;
+            //        [weakSelf loadDataIsPull:YES];
+        }];
+        _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            ++currentPage;
+            //        [weakSelf loadDataIsPull:NO];
+        }];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+
+        _tableView.backgroundColor = &lt;#[UIColor whiteColor]#&gt;;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     }
-    return  _&lt;#name#&gt;;
+    return  _tableView;
 }
-</string>
+- (NSMutableArray *)datasource {
+    if (!_datasource) {
+        _datasource = [[NSMutableArray alloc]init];
+    }
+    return  _datasource;
+}
+
+#pragma mark - 网络请求
+#pragma mark 加载数据 以后要修改
+- (void)loadDataIsPull:(BOOL) ispull{
+    WEAKSELF
+    if (ispull) {
+        [self.datasource removeAllObjects];
+    }
+    [WXBNetworking postWithUrl:@"接口" refreshCache:YES params:@{@"page":@(currentPage)} success:^(id response) {
+        [weakSelf endRefresh];
+    } fail:^(NSError *error) {
+        [weakSelf endRefresh];
+    }];
+}
+
+#pragma mark 结束刷新状态
+- (void)endRefresh{
+    
+    if([self.tableView.mj_footer isRefreshing]){
+        [self.tableView.mj_footer endRefreshing];
+    }
+    if ([self.tableView.mj_header isRefreshing]) {
+        [self.tableView.mj_header endRefreshing];
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>4EE4BEC3-1BA3-44F2-8618-FB923FC54845</string>
 	<key>IDECodeSnippetLanguage</key>

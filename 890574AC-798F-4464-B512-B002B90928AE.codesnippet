@@ -3,30 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWLabelSet</string>
+	<string>JWTextField</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (UILabel *)&lt;#name#&gt; {
+	<string>
+- (UITextField *)&lt;#name#&gt; {
     if (!_&lt;#name#&gt;) {
-        _&lt;#name#&gt; = [[UILabel alloc]initWithFrame:CGRectZero];
-        _&lt;#name#&gt;.font = kDefultLabelTextFont;
-        _&lt;#name#&gt;.textColor = [UIColor blackColor];
-        _&lt;#name#&gt;.backgroundColor = [UIColor whiteColor];
-        _&lt;#name#&gt;.text = @"&lt;#label#&gt;";
+        _&lt;#name#&gt; = [[UITextField alloc]init];
+        _&lt;#name#&gt;.returnKeyType = UIReturnKeyDone;
+        _&lt;#name#&gt;.delegate = self;
+        _&lt;#name#&gt;.font = kLoginFont14;
+        _&lt;#name#&gt;.textColor = &lt;#[UIColor blackColor]#&gt;;
+        _&lt;#name#&gt;.backgroundColor = &lt;#[UIColor whiteColor]#&gt;;
         _&lt;#name#&gt;.textAlignment = NSTextAlignmentCenter;
-        _&lt;#name#&gt;.lineBreakMode = NSLineBreakByWordWrapping;
     }
-    return _&lt;#name#&gt;;
+    return  _&lt;#name#&gt;;
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BE7D87B2-E962-4AFA-9EE2-4D869C6FDEF7</string>
+	<string>890574AC-798F-4464-B512-B002B90928AE</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JWLabelSet</string>
+	<string>JWTextField</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

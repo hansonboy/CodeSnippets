@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWCollectionViewLazyLoad</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+        [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+        [flowLayout setMinimumInteritemSpacing:0.2];
+        [flowLayout setMinimumLineSpacing:1];
+        
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectionView.delegate =self;
+        _collectionView.dataSource =self;
+        _collectionView.backgroundColor = [UIColor colorWithHexRGB:@"F2F2F2"];
+        [_collectionView registerClass:[&lt;#GYCommodityCell#&gt; class] forCellWithReuseIdentifier:@"&lt;#commodityCell#&gt;"];
+    }
+    return _collectionView;
+}
+- (NSMutableArray *)datasource {
+    if (!_datasource) {
+        _datasource = [[NSMutableArray alloc]init];
+    }
+    return  _datasource;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5257FC9C-1415-4DF1-83D2-07B360F099EB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWCollectionViewLazyLoad</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

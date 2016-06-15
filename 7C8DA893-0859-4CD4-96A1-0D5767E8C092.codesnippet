@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>jwtextfiledDelgate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - UITextfiled delegate 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    [self.scrollview setContentOffset:CGPointMake(0, self.detailDateButton.y) animated:YES] ;
+    if(kScreenH &lt;= 480){
+        if (textField == self.phoneTextField) {
+            [self.scrollview setContentOffset:CGPointMake(0, self.dateTextField.y) animated:YES] ;
+        }
+        if (textField == self.recommendPersonNameTextField) {
+            [self.scrollview setContentOffset:CGPointMake(0, self.nameTextField.y) animated:YES] ;
+        }
+        if (textField == self.recommendCodeTextField) {
+            [self.scrollview setContentOffset:CGPointMake(0, self.phoneTextField.y) animated:YES] ;
+        }
+    }
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.nameTextField) {
+        [self.phoneTextField becomeFirstResponder];
+        return NO;
+    }else if(textField == self.phoneTextField){
+        [self.recommendPersonNameTextField becomeFirstResponder];
+        
+    }else if(textField == self.recommendPersonNameTextField){
+        [self.recommendCodeTextField becomeFirstResponder];
+        
+    }else if(textField == self.recommendCodeTextField) {
+        [self.recommendCodeTextField resignFirstResponder];
+        if(kScreenH &lt;= 480){
+            [self.scrollview setContentOffset:CGPointMake(0, 60) animated:YES];
+        }else{
+            [self.scrollview setContentOffset:CGPointMake(0, 0) animated:YES];
+        }
+    }
+    return YES;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7C8DA893-0859-4CD4-96A1-0D5767E8C092</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>jwtextfiledDelgate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

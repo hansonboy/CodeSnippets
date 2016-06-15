@@ -3,21 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWParam</string>
+	<string>JWViewSet</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#pragma mark - &lt;#your mark#&gt;</string>
+	<string>        _backgroundView = [[UIView alloc]init];
+        _backgroundView.backgroundColor = [UIColor whiteColor];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BF720F02-F3CF-4911-9ACC-7F52CA4CFF62</string>
+	<string>38A3D1AB-9852-4D68-9B50-8D9173CBF0EB</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>JWParam</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>jwparam</string>
+	<string>JWViewSet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

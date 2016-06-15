@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWParam</string>
+	<string>jwtableviewDeleteCell</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#pragma mark - &lt;#your mark#&gt;</string>
+	<string>        [weakSelf.tableView beginUpdates];
+        [weakSelf.datasource removeObjectAtIndex:indexPath.section];
+        [weakSelf.tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationMiddle];
+        [weakSelf.tableView reloadData];
+        [weakSelf.tableView endUpdates];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BF720F02-F3CF-4911-9ACC-7F52CA4CFF62</string>
+	<string>034B978C-C22F-4D03-A1C5-2F6567D1DD81</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>JWParam</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>jwparam</string>
+	<string>jwtableviewDeleteCell</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

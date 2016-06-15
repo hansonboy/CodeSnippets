@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWParam</string>
+	<string>JWEndEditing</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#pragma mark - &lt;#your mark#&gt;</string>
+	<string> - (void)endEdit {
+        [self.view endEditing:YES];
+    }
+    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endEdit)]];
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BF720F02-F3CF-4911-9ACC-7F52CA4CFF62</string>
+	<string>6A6F77D9-0087-4986-B6A8-FAAEFBF80E9A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>JWParam</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>jwparam</string>
+	<string>JWEndEditing</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

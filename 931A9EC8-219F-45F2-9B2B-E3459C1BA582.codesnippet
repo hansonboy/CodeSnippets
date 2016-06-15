@@ -3,21 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>JWParam</string>
+	<string>JWCollectionViewProperty</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#pragma mark - &lt;#your mark#&gt;</string>
+	<string>@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *datasource;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BF720F02-F3CF-4911-9ACC-7F52CA4CFF62</string>
+	<string>931A9EC8-219F-45F2-9B2B-E3459C1BA582</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>JWParam</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>jwparam</string>
+	<string>JWCollectionViewProperty</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>JWPickerViewDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+#pragma mark Picker Data Source Methed
+- (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    // 返回列数
+    return 1;
+}
+- (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+
+    if (pickerView == self.marriagePickview.pickerView) {
+        return self.marriageStateArrary.count;
+    }else if(pickerView == self.professionPickview.pickerView){
+        return self.professionDataSource.count;
+    }else if(pickerView == self.wearableDevicePickview.pickerView){
+        return self.wearableDeviceDataSource.count;
+    }
+
+    if(pickerView == self.marriagePickview2.pickerView) {
+        return self.marriageStateArrary.count;
+    }else if(pickerView == self.professionPickview2.pickerView){
+        return self.professionDataSource.count;
+    }else if(pickerView == self.wearableDevicePickview2.pickerView){
+        return self.wearableDeviceDataSource.count;
+    }
+
+    return 0;
+}
+
+- (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    // 返回该行标题
+
+    if (pickerView == self.marriagePickview.pickerView) {
+        return [self.marriageStateArrary objectAtIndex:row];
+    }else if(pickerView == self.professionPickview.pickerView){
+        return [self.professionDataSource objectAtIndex:row];
+    }else if(pickerView == self.wearableDevicePickview.pickerView){
+        return [self.wearableDeviceDataSource objectAtIndex:row];
+    }
+
+    if(pickerView == self.marriagePickview2.pickerView) {
+        return [self.marriageStateArrary objectAtIndex:row];
+    }else if(pickerView == self.professionPickview2.pickerView){
+        return [self.professionDataSource objectAtIndex:row];
+    }else if(pickerView == self.wearableDevicePickview2.pickerView){
+        return [self.wearableDeviceDataSource objectAtIndex:row];
+    }
+
+    return nil;
+}
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *string = [self pickerView:pickerView titleForRow:row forComponent:component];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:string attributes:@{NSFontAttributeName:kLoginFont17,NSForegroundColorAttributeName:kLoginDarkTextColor,NSBackgroundColorAttributeName:[UIColor whiteColor]}];
+    return attributedString;
+}
+
+
+#pragma mark Picker Delegate Methods
+
+
+-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return 40;
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+
+    if (pickerView == self.marriagePickview.pickerView) {
+        self.marriageStateButton.rightTitle =  [self.marriageStateArrary objectAtIndex:row];
+    }else if(pickerView == self.professionPickview.pickerView){
+        self.jobButton.rightTitle =  [self.professionDataSource objectAtIndex:row];
+    }else if(pickerView == self.wearableDevicePickview.pickerView){
+        self.wearableDevice.rightTitle =  [self.wearableDeviceDataSource objectAtIndex:row];
+    }
+
+    if (pickerView == self.marriagePickview2.pickerView) {
+        self.marriagePickview2.selectedOption = [self.marriageStateArrary objectAtIndex:row];
+    }else if(pickerView == self.professionPickview2.pickerView){
+        self.professionPickview2.selectedOption = [self.professionDataSource objectAtIndex:row];
+    }else if(pickerView == self.wearableDevicePickview2.pickerView){
+        self.wearableDevicePickview2.selectedOption = [self.wearableDeviceDataSource objectAtIndex:row];
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DD58534C-60A3-44CD-B677-3B83C717954C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JWPickerViewDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
